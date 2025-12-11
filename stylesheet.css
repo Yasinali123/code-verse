@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - TECHSPIRE</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-  <style>
+<style>
     :root {
       --primary: #0a2540;
       --accent: #00b4d8;
@@ -365,101 +358,12 @@
       }
     }
 
-    /* Error and Success States */
-    .form-group.error input {
-      border-color: var(--error);
-      box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
-    }
 
-    .error-message {
-      color: var(--error);
-      font-size: 0.85em;
-      margin-top: 4px;
-    }
+    
 
-    .success-message {
-      color: var(--success);
-      font-size: 0.85em;
-      margin-top: 4px;
+    
     }
   </style>
-</head>
-<body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <a href="index.html" class="navbar-logo">
-      <img src="weblogo.png" alt="TECHSPIRE Logo">
-      TECHSPIRE
-    </a>
-    <div class="navbar-links">
-      <a href="index.html">Home</a>
-      <a href="index.html#how">Events</a>
-      <a href="index.html#features">Achievements</a>
-      <a href="index.html#contact">Contacts</a>
-    </div>
-  </nav>
 
-  <!-- Main Container -->
-  <div class="main-container">
-    <div class="login-container">
-      <!-- Login Header -->
-      <div class="login-header">
-        <div class="login-header-logo">
-          <img src="weblogo.png" alt="TECHSPIRE Logo">
-        </div>
-        <h1>Welcome Back</h1>
-        <p>Join the technical innovation community</p>
-      </div>
 
-      <!-- Login Form -->
-      <form class="login-form">
-        <!-- Email Input -->
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" placeholder="Enter your email" required>
-        </div>
-
-        <!-- Password Input -->
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Enter your password" required>
-        </div>
-
-        <!-- Remember Me -->
-        <div class="form-group-checkbox">
-          <input type="checkbox" id="remember" name="remember">
-          <label for="remember">Remember me</label>
-        </div>
-
-        <!-- Forgot Password Link -->
-        <div class="form-footer">
-          <a href="forgot-password.html">Forgot Password?</a>
-        </div>
-
-        <!-- Login Button -->
-        <div class="btn-group">
-          <button type="submit" class="btn-login">LOGIN TO TECHSPIRE</button>
-        </div>
-      </form>
-
-      <!-- Register Section -->
-      <div class="register-section">
-        <p>Don't have an account yet?</p>
-        <a href="register.html">Create an account</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-    </div>
-    <div class="footer-text">
-      Team "CODEVERSE" &copy; 2025 | TECHSPIRE - Technical Club. All rights reserved.
-    </div>
-  </footer>
-</body>
-</html>
+    
