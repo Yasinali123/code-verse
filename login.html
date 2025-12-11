@@ -3,7 +3,280 @@
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
-  <link rel="stylesheet" href="style.css">
+  
+  <style>
+
+:root {
+  --primary: #0a2540;
+  --accent: #00b4d8;
+  --bg: #f4f9fb;
+  --white: #fff;
+  --gray: #e0e0e0;
+  --text: #222;
+  --cta: #00b4d8;
+  --cta-hover: #0077b6;
+  --error: #e74c3c;
+  --success: #27ae60;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main Container */
+.main-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* Login Container */
+.login-container {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 420px;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.login-header-logo {
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.login-header-logo img {
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+}
+
+.login-header h1 {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.login-header p {
+  font-size: 0.95em;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Form Styles */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.95em;
+  color: var(--primary);
+}
+
+.form-group input {
+  padding: 12px 16px;
+  border: 2px solid var(--gray);
+  border-radius: 8px;
+  font-size: 1em;
+  font-family: 'Montserrat', Arial, sans-serif;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background: var(--bg);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.1);
+  background: var(--white);
+}
+
+.form-group input::placeholder {
+  color: #999;
+}
+
+/* Checkbox Styles */
+.form-group-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.form-group-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+
+.form-group-checkbox label {
+  margin: 0;
+  font-size: 0.9em;
+  color: #666;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+/* Button Styles */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn-login {
+  padding: 14px 24px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.1em;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--cta) 0%, var(--cta-hover) 100%);
+  color: var(--white);
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+}
+
+.btn-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 180, 216, 0.4);
+}
+
+.btn-login:active {
+  transform: translateY(0);
+}
+
+/* Forgot Password Link */
+.form-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 16px;
+  font-size: 0.9em;
+}
+
+.form-footer a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.form-footer a:hover {
+  color: var(--cta-hover);
+}
+
+/* Register Link Section */
+.register-section {
+  text-align: center;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--gray);
+}
+
+.register-section p {
+  color: #666;
+  font-size: 0.95em;
+  margin-bottom: 8px;
+}
+
+.register-section a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.register-section a:hover {
+  color: var(--cta-hover);
+}
+
+/* Error and Success States */
+.form-group.error input {
+  border-color: var(--error);
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.error-message {
+  color: var(--error);
+  font-size: 0.85em;
+  margin-top: 4px;
+}
+
+.success-message {
+  color: var(--success);
+  font-size: 0.85em;
+  margin-top: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .main-container {
+    padding: 20px 16px;
+  }
+
+  .login-container {
+    padding: 36px 24px;
+    max-width: 100%;
+  }
+
+  .login-header h1 {
+    font-size: 1.5em;
+  }
+
+  .login-header-logo img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .form-group input {
+    padding: 12px 14px;
+    font-size: 0.95em;
+  }
+
+  .btn-login {
+    padding: 12px 20px;
+    font-size: 1em;
+  }
+}
+
+  </style>
 </head>
 <body>
   <div class="container">
